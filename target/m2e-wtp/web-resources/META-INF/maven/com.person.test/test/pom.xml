@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.person.test</groupId>
+  <artifactId>test</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>test Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <!-- 
+          版本设置 
+  -->
+  <properties>
+    <!-- junit -->
+    <junit.version>3.8.1</junit.version>
+    <!-- javax.servlet-api -->
+    <servlet.version>4.0.0</servlet.version>
+    <!-- struts2-core -->
+    <struts2.core.version>2.5.13</struts2.core.version>
+    <!-- struts2-spring-plugin -->
+    <struts2-spring-plugin.version>2.5.13</struts2-spring-plugin.version>
+    <!-- spring -->
+    <spring.version>4.3.1.RELEASE</spring.version>
+  </properties>
+  <!-- 
+          导入的包
+  -->
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- ============================servlet=================================== -->
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>${servlet.version}</version>
+        <scope>provided</scope>
+    </dependency>
+    
+    <!-- ============================struts=================================== -->
+    <dependency>
+        <groupId>org.apache.struts</groupId>
+        <artifactId>struts2-core</artifactId>
+        <version>${struts2.core.version}</version>
+    </dependency>
+    
+    <!-- ============================struts-spring=================================== -->
+    <dependency>
+        <groupId>org.apache.struts</groupId>
+        <artifactId>struts2-spring-plugin</artifactId>
+        <version>${struts2-spring-plugin.version}</version>
+    </dependency>
+    
+    <!-- ============================spring=================================== -->
+    <dependency>
+       <groupId>org.springframework</groupId>
+       <artifactId>spring-context</artifactId>
+       <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+       <groupId>org.springframework</groupId>
+       <artifactId>spring-beans</artifactId>
+       <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+       <groupId>org.springframework</groupId>
+       <artifactId>spring-core</artifactId>
+       <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+       <groupId>org.springframework</groupId>
+       <artifactId>spring-web</artifactId>
+       <version>${spring.version}</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>test</finalName>
+  </build>
+</project>
