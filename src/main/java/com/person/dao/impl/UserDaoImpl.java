@@ -1,30 +1,31 @@
 package com.person.dao.impl;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.person.dao.inte.UserDaoInte;
 import com.person.model.UserModel;
 
 @Repository(value="userDaoImpl")
 public class UserDaoImpl implements UserDaoInte{
 	
-	//虚拟数据
-	List<UserModel> userModel=new ArrayList<UserModel>();
-	public UserDaoImpl() {
-		userModel.add(new UserModel(1,"一"));
-		userModel.add(new UserModel(2,"二"));
-		userModel.add(new UserModel(3,"三"));
-		userModel.add(new UserModel(4,"四"));
-		userModel.add(new UserModel(5,"五"));
-		userModel.add(new UserModel(6,"六"));
-		userModel.add(new UserModel(7,"七"));
-		userModel.add(new UserModel(8,"八"));
-	}
+    @Autowired
+    private SessionFactory sessionFactory;
 
+    private Session getSession() {
+        return sessionFactory.getCurrentSession();
+    }
+
+	@SuppressWarnings("unchecked")
+	@Transactional
 	public List<UserModel> showUser() {
-		
-		return userModel;
+		List<UserModel> list = this.getSession().createQuery("from UserModel").list();
+		return list;
 	}
 
 }

@@ -5,6 +5,7 @@
 <body>
     <h2>第二页</h2>
     	<s:iterator value="#session.user" var="u">  
+    		<li>userID：<s:property value="#u.userID"/></li>
     		<li>名字：<s:property value="#u.name"/></li> 
     		<li>年龄：<s:property value="#u.age"/></li>
     		<hr> 

@@ -31,6 +31,7 @@ public class UserController extends ActionSupport{
 
 	public String showUser() {
 		List<UserModel> list =userServiceImpl.showUser();
+		System.out.println(list);
 		Map session = ActionContext.getContext().getSession();
 		session.put("user", list);
 		return SUCCESS;  

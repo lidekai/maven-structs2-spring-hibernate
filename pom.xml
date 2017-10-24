@@ -15,12 +15,20 @@
     <junit.version>3.8.1</junit.version>
     <!-- javax.servlet-api -->
     <servlet.version>4.0.0</servlet.version>
-    <!-- struts2-core -->
-    <struts2.core.version>2.5.13</struts2.core.version>
+    <!-- struts2 -->
+    <struts2.version>2.5.13</struts2.version>
     <!-- struts2-spring-plugin -->
     <struts2-spring-plugin.version>2.5.13</struts2-spring-plugin.version>
     <!-- spring -->
     <spring.version>4.3.1.RELEASE</spring.version>
+    <!-- hibernate -->
+    <hibernate.version>4.3.1.Final</hibernate.version>
+    <!-- sql -->
+    <mysql.version>6.0.6</mysql.version>
+    <!-- c3p0 -->
+    <c3p0.version>0.9.1</c3p0.version>
+    <!-- aspectjweaver -->
+    <aspectjweaver.version>1.8.5</aspectjweaver.version>
   </properties>
   <!-- 
           导入的包
@@ -45,7 +53,18 @@
     <dependency>
         <groupId>org.apache.struts</groupId>
         <artifactId>struts2-core</artifactId>
-        <version>${struts2.core.version}</version>
+        <version>${struts2.version}</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>org.apache.struts</groupId>
+        <artifactId>struts2-convention-plugin</artifactId>
+        <version>${struts2.version}</version>
+    </dependency>
+    <dependency>
+       <groupId>org.apache.struts</groupId>
+       <artifactId>struts2-config-browser-plugin</artifactId>
+       <version>${struts2.version}</version>
     </dependency>
     
     <!-- ============================struts-spring=================================== -->
@@ -76,6 +95,45 @@
        <artifactId>spring-web</artifactId>
        <version>${spring.version}</version>
     </dependency>
+    <dependency>
+       <groupId>org.springframework</groupId>
+       <artifactId>spring-jdbc</artifactId>
+       <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+       <groupId>org.springframework</groupId>
+       <artifactId>spring-orm</artifactId>
+       <version>${spring.version}</version>
+    </dependency>
+     
+    <!-- ============================hibernate=================================== -->
+    <dependency>
+       <groupId>org.hibernate</groupId>
+       <artifactId>hibernate-core</artifactId>
+       <version>${hibernate.version}</version>
+    </dependency>
+    
+    <!-- ============================sql=================================== -->
+    <dependency>
+       <groupId>mysql</groupId>
+       <artifactId>mysql-connector-java</artifactId>
+       <version>${mysql.version}</version>
+    </dependency>
+    
+    <!-- ============================c3p0=================================== -->
+    <dependency>
+       <groupId>c3p0</groupId>
+       <artifactId>c3p0</artifactId>
+       <version>${c3p0.version}</version>
+    </dependency>
+    
+    <!-- ============================aspectjweaver=================================== -->
+    <dependency>
+       <groupId>org.aspectj</groupId>
+       <artifactId>aspectjweaver</artifactId>
+       <version>${aspectjweaver.version}</version>
+    </dependency>
+    
   </dependencies>
   <build>
     <finalName>test</finalName>
